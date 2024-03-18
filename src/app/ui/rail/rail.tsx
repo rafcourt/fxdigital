@@ -12,7 +12,7 @@ export default function Rail({
   tiles:Array<movieTile>
 }) {
   return (
-    <div className="text-white ml-7 mb-5">
+    <div className="whitespace-nowrap overflow-hidden text-white ml-7 mb-5">
       <p className="ml-5 mb-5 text-base">{ title }</p>
       <>
         {

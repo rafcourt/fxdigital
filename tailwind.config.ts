@@ -13,6 +13,13 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      width:{
+        "hd-tv-app": "1280px",
+        "movie-tile": "150px",
+      },
+      height:{
+        "hd-tv-app": "720px",
+      }
     },
   },
   plugins: [],
