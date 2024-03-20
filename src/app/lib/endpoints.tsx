@@ -22,6 +22,8 @@ const ENDPOINTS:Endpoints = {
     config: `${HOSTS[ENV]}/configuration`,
     trendingMovies: `${HOSTS[ENV]}/trending/movie/day?language=en-US`,
     trendingShows: `${HOSTS[ENV]}/trending/tv/day?language=en-US`,
+    searchMovies: `${HOSTS[ENV]}/search/movie?include_adult=false&language=en-US&page=1`,
+    searchShows: `${HOSTS[ENV]}/search/tv?include_adult=false&language=en-US&page=1`,
 };
 
 export default function Url(endpointIdentifier:string):string {

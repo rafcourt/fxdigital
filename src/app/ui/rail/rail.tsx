@@ -2,7 +2,8 @@ import MovieTile from '@/app/ui/tile/movie';
 type movieTile = {
   original_title: string,
   poster_path: string,
-  media_type?: 'movie'|'show'
+  media_type?: 'movie'|'show',
+  id?:number
 }
 export default function Rail({
   title,
@@ -17,7 +18,11 @@ export default function Rail({
       <>
         {
           tiles.map((tile:movieTile, index:number)=>{
-            return(<MovieTile key={`movie-${index}`} title={tile.original_title} imagePath={tile.poster_path}></MovieTile>)
+            return(<MovieTile 
+              key={ `movie-${index + tile.id }`} 
+              title={tile.original_title} 
+              imagePath={tile.poster_path}> 
+              </MovieTile>)
           })
         }
       </>
