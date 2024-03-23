@@ -16,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}><div id="app" className="w-hd-tv-app h-hd-tv-app overflow-hidden bg-gray-900">{children}</div></body>
+      <body className={inter.className}>
+        <div 
+          id="app" 
+          className="w-hd-tv-app h-hd-tv-app overflow-hidden bg-gray-900">
+            {children}
+        </div>
+      </body>
     </html>
   );
 }
