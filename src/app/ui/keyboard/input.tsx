@@ -1,10 +1,10 @@
-import KeyMap from '@/app/ui/keyboard/keys';
-import RowOfKeys from '@/app/ui/keyboard/row';
+"use client"
 
-export default function Input() {
+const caret = "|";
+export default function Input({query=''}:{query:string}) {
   return (
-    <div id="input" className="mx-auto bg-white w-80 h-12 rounded-full text-center px-5">
-      <p className="whitespace-nowrap text-base overflow-hidden w-full mt-3">dra</p>
+    <div id="input" className="whitespace-nowrap text-base mx-auto bg-white w-80 h-12 rounded-full text-center px-5 py-3">
+        { query + caret }
     </div>
   );
 }
