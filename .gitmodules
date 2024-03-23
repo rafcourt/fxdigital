@@ -1,0 +1,3 @@
+[submodule "submodule/spatial"]
+	path = submodule/spatial
+	url = https://github.com/NoriginMedia/Norigin-Spatial-Navigation
