@@ -24,6 +24,8 @@ const ENDPOINTS:Endpoints = {
     trendingShows: `${HOSTS[ENV]}/trending/tv/day?language=en-US`,
     searchMovies: `${HOSTS[ENV]}/search/movie?include_adult=false&language=en-US&page=1`,
     searchShows: `${HOSTS[ENV]}/search/tv?include_adult=false&language=en-US&page=1`,
+    detailsTV:`${HOSTS[ENV]}/tv/[id]?language=en-US`,
+    detailsMovie:`${HOSTS[ENV]}/movie/[id]?language=en-US`,
 };
 
 export default function Url(endpointIdentifier:string):string {
