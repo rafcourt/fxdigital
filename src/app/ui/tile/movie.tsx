@@ -9,7 +9,8 @@ export default function MovieTile({
   key,
   id,
   media_type,
-  onFocus
+  onFocus,
+  testId
 }:{
   title:string, 
   imagePath:string,
@@ -17,6 +18,7 @@ export default function MovieTile({
   id:number,
   media_type:string
   onFocus:({ x }: { x: number })=>void,
+  testId?:string,
 }) {
   const router = useRouter();
   const base = "w-movie-tile h-fit inline-block relative text-center px-1 py-1 mx-2 rounded-l";
@@ -25,7 +27,7 @@ export default function MovieTile({
 
   const url = `/details/${media_type}/${id}`
   return (
-    <FocusableElement focusClassNames={focus} normalClassNames={normal} onFocus={onFocus} onEnterPress={() => router.push(url)}>
+    <FocusableElement testId={testId} focusClassNames={focus} normalClassNames={normal} onFocus={onFocus} onEnterPress={() => router.push(url)}>
       <Link key={key} href={url}>
         <Image
           src={`https://image.tmdb.org/t/p/w185${imagePath}`}

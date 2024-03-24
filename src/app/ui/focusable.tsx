@@ -12,7 +12,8 @@ export default function FocusableElement({
     onEnterPress,
     onEnterRelease,
     focusKey,
-    extraProps
+    extraProps,
+    testId,
 }:{ 
     children: React.ReactNode,
     focusClassNames:string, 
@@ -22,10 +23,11 @@ export default function FocusableElement({
     onEnterPress?:<T extends SetStateAction<string>>(arg: T)=>void,
     onEnterRelease?:<T extends SetStateAction<string>>(arg: T)=>void,
     focusKey?:string,
-    extraProps?: object
+    extraProps?: object,
+    testId?:string,
 }) {
     const { ref, focused } = useFocusable({ focusKey, onFocus, onEnterPress, onEnterRelease, extraProps });
     return (
-      <div ref={ref} className={`${className} ${focused ? focusClassNames: normalClassNames}`}>{children}</div>
+      <div data-testid={testId} ref={ref} className={`${className} ${focused ? focusClassNames: normalClassNames}`}>{children}</div>
     );
   }

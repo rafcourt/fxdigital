@@ -1,7 +1,7 @@
 'use client'
 
 import TopNav from '@/app/ui/navigation/topnav';
-import { init, withFocusable,useFocusable,FocusContext } from '@noriginmedia/react-spatial-navigation';
+import { init, useFocusable, FocusContext } from '@noriginmedia/react-spatial-navigation';
 import { useEffect } from 'react';
 
 init({ debug: false, visualDebug: false});
