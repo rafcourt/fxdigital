@@ -1,11 +1,12 @@
 import Key from '@/app/ui/keyboard/key';
+import { keyPressEvent } from '../focusable';
 
 export default function RowOfKeys({
     keys,
     onEnterPress
 }:{
     keys:Array<string>,
-    onEnterPress:<T>(key: T)=>void
+    onEnterPress:(arg: keyPressEvent)=>void
 }) {
     return (
         <div className="whitespace-nowrap overflow-hidden text-white mb-5">

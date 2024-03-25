@@ -3,16 +3,15 @@ import RowOfKeys from '@/app/ui/keyboard/row';
 import Input from '@/app/ui/keyboard/input';
 import SearchButton from '@/app/ui/keyboard/search-button';
 import { useState, useCallback } from 'react';
+import { keyPressEvent } from '../focusable';
 
 export default function Keyboard() {
 
   const [query, addSelectedKeyToQuery] = useState('');
-  type T = {
-    keyFace: string
-  }
-  const onKeyPress = useCallback(<T extends {keyFace:string}>(key: T) => {
+
+  const onKeyPress = useCallback(({keyFace}:keyPressEvent) => {
     addSelectedKeyToQuery((query:string)=>{
-      return query + key.keyFace;
+      return query + keyFace;
     });
   }, []);
 

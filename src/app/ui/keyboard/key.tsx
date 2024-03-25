@@ -1,4 +1,4 @@
-import FocusableElement from '@/app/ui/focusable';
+import FocusableElement, { keyPressEvent } from '@/app/ui/focusable';
 
 const base = "w-16 h-fit inline-block relative text-center px-1 py-1 mx-2 rounded-l";
 const normal = `${base} bg-blue-900`;
@@ -9,7 +9,7 @@ export default function FocusableKey({
     onEnterPress
   }:{
     kbValue:string,
-    onEnterPress:<T>(arg: T)=>void
+    onEnterPress:(arg: keyPressEvent)=>void
   }){
     return (
       <FocusableElement 

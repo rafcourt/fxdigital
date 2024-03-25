@@ -22,12 +22,12 @@ export default function Rail({
 }) {
   const { ref, focusKey } = useFocusable();
 
-  const scrollingRef = useRef(null);
+  const scrollingRef = useRef<HTMLInputElement>(null);
 
   const onAssetFocus = useCallback(
     ({ x }: { x: number }) => {
-      scrollingRef?.current?.scrollTo({
-        x,
+      scrollingRef.current && scrollingRef.current.scrollTo({
+        left: x,
         behavior: 'smooth'
       });
     },

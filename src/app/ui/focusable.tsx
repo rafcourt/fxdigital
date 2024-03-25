@@ -3,6 +3,10 @@
 import { useFocusable } from '@noriginmedia/react-spatial-navigation';
 import { SetStateAction } from 'react';
 
+export type keyPressEvent = {
+  keyFace: string
+}
+
 export default function FocusableElement({ 
     children, 
     focusClassNames = '', 
@@ -10,7 +14,6 @@ export default function FocusableElement({
     className = '',
     onFocus,
     onEnterPress,
-    onEnterRelease,
     focusKey,
     extraProps,
     testId,
@@ -20,13 +23,12 @@ export default function FocusableElement({
     normalClassNames:string,
     className?:string,
     onFocus?:({ x }: { x: number })=>void,
-    onEnterPress?:<T extends SetStateAction<string>>(arg: T)=>void,
-    onEnterRelease?:<T extends SetStateAction<string>>(arg: T)=>void,
+    onEnterPress?:(arg: keyPressEvent)=>void,
     focusKey?:string,
     extraProps?: object,
     testId?:string,
 }) {
-    const { ref, focused } = useFocusable({ focusKey, onFocus, onEnterPress, onEnterRelease, extraProps });
+    const { ref, focused } = useFocusable({ focusKey, onFocus, onEnterPress, extraProps });
     return (
       <div data-testid={testId} ref={ref} className={`${className} ${focused ? focusClassNames: normalClassNames}`}>{children}</div>
     );
