@@ -41,7 +41,7 @@ npm run build
 ```
 
 A couple points
-- The rails do not scroll. I did not have time to resolve this issue. rail.tsx line 29. `x` does get passed to the callback so I suspect that there may be an issue with the class names used from tailwind may be inappropriate.
+- ~~The rails do not scroll. I did not have time to resolve this issue. rail.tsx line 29. `x` does get passed to the callback so I suspect that there may be an issue with the class names used from tailwind may be inappropriate.~~ Opted to set left to -x with .5s second transition duration.
 
 - `'Opens the details screen'` test is skipped for now because it fails. I did not have time to resolve this issue. The test simulates a user pressing enter on a movie tile element. This event calls `route.push` and should show the details page on the router. 
 

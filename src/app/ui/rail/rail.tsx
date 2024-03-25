@@ -26,36 +26,33 @@ export default function Rail({
 
   const onAssetFocus = useCallback(
     ({ x }: { x: number }) => {
-      scrollingRef.current && scrollingRef.current.scrollTo({
-        left: x,
-        behavior: 'smooth'
-      });
+      if(scrollingRef.current){
+        scrollingRef.current.style.left = `-${x}px`
+      }
     },
     [scrollingRef]
   );
 
   return (
     <FocusContext.Provider value={focusKey}>
-    <div ref={ref} className="whitespace-nowrap overflow-hidden text-white ml-7 mb-5">
-      <p className="ml-5 mb-5 text-base">{ title }</p>
-      <div ref={scrollingRef} className=''>
-      <div className=''>
-        {
-          tiles.map((tile:movieTile, index:number)=>{
-            return(tile.poster_path ? <MovieTile 
-              key={ `movie-${index + tile.id }`} 
-              title={tile.original_title} 
-              imagePath={tile.poster_path}
-              id={tile.id}
-              media_type={media_type || tile.media_type}
-              onFocus={onAssetFocus}
-              > 
-              </MovieTile> : <></>)
-          })
-        }
+      <div ref={ref} className="whitespace-nowrap overflow-hidden text-white ml-7 mb-5">
+        <p className="ml-5 mb-5 text-base">{ title }</p>
+          <div className='relative duration-500' ref={scrollingRef}>
+          {
+            tiles.map((tile:movieTile, index:number)=>{
+              return(tile.poster_path ? <MovieTile 
+                key={ `movie-${index + tile.id }`} 
+                title={tile.original_title} 
+                imagePath={tile.poster_path}
+                id={tile.id}
+                media_type={media_type || tile.media_type}
+                onFocus={onAssetFocus}
+                > 
+                </MovieTile> : <></>)
+            })
+          }
+          </div>
       </div>
-      </div>
-    </div>
     </FocusContext.Provider>
   );
 }
