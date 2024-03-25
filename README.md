@@ -1,5 +1,16 @@
 ## Getting Started
 
+Install
+
+```bash
+npm install
+```
+
+Initiate submodule
+```bash
+git submodule update --init --recursive
+```
+
 Create .env then add
 
 ```
