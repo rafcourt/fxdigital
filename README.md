@@ -1,3 +1,39 @@
+## Getting Started
+
+Create .env then add
+
+```
+AUTH=YOUR_TMDB_ACCESS_TOKEN
+```
+
+First, run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+or view on vercel
+
+[https://rcourt.vercel.app/home](https://rcourt.vercel.app/home)
+
+To analyze, in .env add
+
+```
+ANALYZE=true
+```
+then run
+
+```
+npm run build
+```
+
+A couple points
+- The rails do not scroll. I did not have time to resolve this issue. rail.tsx line 29. `x` does get passed to the callback so I suspect that there may be an issue with the class names used from tailwind may be inappropriate.
+
+- `'Opens the details screen'` test is skipped for now because it fails. I did not have time to resolve this issue. The test simulates a user pressing enter on a movie tile element. This event calls `route.push` and should show the details page on the router. 
+
 # Brief
 
 Develop an app that integrates with the [TMDB API](https://developer.themoviedb.org/docs/getting-started) and displays in rails today’s trending films and TV shows. The app should also include a search feature that allows a user to find any film or TV show. You can use any framework you feel comfortable with but the app must be written using TypeScript.
@@ -19,14 +55,3 @@ Develop an app that integrates with the [TMDB API](https://developer.themoviedb.
 - App architecture.
 - Tools used to develop the app such as linters and bundlers.
 - Implementation of unit tests.
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
